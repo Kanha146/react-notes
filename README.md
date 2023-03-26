@@ -11,11 +11,13 @@ ans:- no, parcel does not remove. when we r using parcel and babel it does not d
 when we can't find console log to delete ,here is plugin i.e. babel plugin transform runtime remove console
 
 run the command ----
-npm install babel-plugin--trnsform-remove-console --save-dev
+
+    npm install babel-plugin--trnsform-remove-console --save-dev
 
 after install it we configure it in project  by using the :
- .bebelrc
- ==========================================================================================================
+     
+     .bebelrc
+
  
  
 Reconsilation:-
@@ -24,45 +26,48 @@ Reconsilation:-
 When diffing two trees, React first compares the two root elements. The behavior is different depending on the types of the root elements.
 If you implement it naively, inserting an element at the beginning has worse performance. For example, converting between these two trees works poorly:
 
-<ul>
-  <li>Duke</li>
-  <li>Villanova</li>
-</ul>
+     <ul>
+    <li>Duke</li>
+    <li>Villanova</li>
+    </ul>
 
-<ul>
-  <li>Connecticut</li>
-  <li>Duke</li>
-  <li>Villanova</li>
-</ul>
+     <ul>
+    <li>Connecticut</li>
+    <li>Duke</li>
+    <li>Villanova</li>
+    </ul>
 React will mutate every child instead of realizing it can keep the <li>Duke</li> and <li>Villanova</li> subtrees intact. This inefficiency can be a problem.
 
 Keys
 In order to solve this issue, React supports a key attribute. When children have keys, React uses the key to match children in the original tree with children in the subsequent tree. For example, adding a key to our inefficient example above can make the tree conversion efficient:
 
-<ul>
-  <li key="2015">Duke</li>
-  <li key="2016">Villanova</li>
-</ul>
 
-<ul>
-  <li key="2014">Connecticut</li>
-  <li key="2015">Duke</li>
-  <li key="2016">Villanova</li>
-</ul>
+
+    <ul>
+    <li key="2015">Duke</li>
+    <li key="2016">Villanova</li>
+    </ul>
+
+    <ul>
+    <li key="2014">Connecticut</li>
+    <li key="2015">Duke</li>
+    <li key="2016">Villanova</li>
+    </ul>
 Now React knows that the element with key '2014' is the new one, and the elements with the keys '2015' and '2016' have just moved.
 
 In practice, finding a key is usually not hard. The element you are going to display may already have a unique ID, so the key can just come from your data:
 
-<li key={item.id}>{item.name}</li>
+
+    <li key={item.id}>{item.name}</li>
 
 
 
-======================================================
-
-react.createElement => object => html(DOM)
 
 
-const heading =react.creatElement(
+   react.createElement => object => html(DOM)
+
+
+    const heading =react.creatElement(
  
 
 
@@ -71,20 +76,22 @@ JSX-
 
 when we write in multiple line we can do it by using ();
 e.g. 
-    const heading2=(
-      <h1 id="title" key="h2">
+
+         const heading2=(
+    <h1 id="title" key="h2">
       Namaste React
-      
       </h1>
-    );
+      );
 
 Que:-  Is jsx html inside javascript??
 Ans:-  NO.
-      <h1 id="title" key="h2">
-      Namaste React
-     </h1>
+   
+   
+    <h1 id="title" key="h2">
+    Namaste React
+    </h1>
      
-     jsx is html like syntax not html, this is fancy way write html inside javascript
+   jsx is html like syntax not html, this is fancy way write html inside javascript
      
      
      
@@ -127,7 +134,6 @@ and pkg lock.json     -  2 one we create and other is in node modules
 where is all trasivity depencies present --- Node Module
 
 
---------------------------------------------------------------
 
 React Componets:-
     there r two type components-- 
@@ -151,8 +157,8 @@ Note:-
 
 this ids normal javascript function that is returnning jsx
 
-  const Hc1=()=>{
-  return (
+    const Hc1=()=>{
+    return (
      <div>  
      <h1> namste react</h1>
      <h2> this is react</h2>
@@ -162,7 +168,7 @@ this ids normal javascript function that is returnning jsx
      
   both r same.
   
-   const Hc2=()=>(
+     const Hc2=()=>(
      <div> 
      <h1> namste react</h1>
      <h2> this is react</h2>
@@ -185,49 +191,56 @@ this is valid.
     
 Que:-How to we render my react element?
 Ans:-
-rea ct element -- its object 
-const heading=(
-<h1 id='title' key='h2'>
-</h1>
-);
+react element -- its object 
+
+    const heading=(
+    <h1 id='title' key='h2'>
+    </h1>
+    );
 
 render the react element---
+
     root.render(heading);
     
 Que:- How to render react functional component?  
 Ans:-
 we do just like
-root.render(<Hc1/>);
+
+    root.render(<Hc1/>);
   
 Ques:- how to use react element in react component?
 Ans:-
-<div>
+
+     <div>
       {heading}
       
- </div>
+    </div>
 
 Ques:- how to use react component in react component?
 Ans:-
-<div>
+
+       <div>
       <Hc2/>
       also we write....   
       {Hc2()}
       
- </div>
- ===============================
+     </div>
+ 
+ 
  sanitization :- it is done by jsx
  
  call data from api.
- const data=api.getData();
  
- const Hc2=()=>(
+     const data=api.getData();
+ 
+     const Hc2=()=>(
      <div> 
      {data}.........> it does sanitization , data r not put directly iside it.
      <h1> namste react</h1>
      <h2> this is react</h2>
      </div>
      );
-====================================     
+  
 Jargan:-   
           
   composing component or component composition--  when we use component inside component  known as component component.
@@ -235,17 +248,22 @@ Jargan:-
   
 All r roll up what r in lecture 4
 ---------------------------------
-1. created script:-   "scripts":{
-                      "start":"parcel index.html",
+1. created script:-          "scripts":{
+                              "start":"parcel index.html",
 2.   build              
                        "build":"parcel build index.html "
                       };
                       
 3. Remove console log  so install plugin and configure it in system.
-   babel-plugin-transform-remove-console -D
+
+         babel-plugin-transform-remove-console -D
    
-   for configure-   .babelrc  by making file 
-     file include code i.e.
+   for configure-   
+        
+        .babelrc  
+   
+   by making file ,file include code i.e.
+       
        { 
        "plugin":[[" transform-remove-console",
        {exclude"":["error","warn"]}
@@ -253,8 +271,10 @@ All r roll up what r in lecture 4
         ]]
         }
 4.  Browserlist :- last 2 version of chrome  and also on other browser
-    "browserlist":{
-    "last 2 version of chrome"
+       
+       
+       "browserlist":{
+      "last 2 version of chrome"
     };
            
 5. Keys :-
@@ -270,8 +290,9 @@ All r roll up what r in lecture 4
 9. composition component
 10. skipped return from component
 
-=================================================
+
 doubt:--
+---------
 
 why do we import react from react  
 -> bcz react come from node modules.
