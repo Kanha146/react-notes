@@ -169,17 +169,19 @@ this ids normal javascript function that is returnning jsx
      </div>
      );
      
-     we can also write javascript normal function.
+ we can also write javascript normal function.
      
      const Hc1= function(){
-  return (
+     return (
      <div>  
      <h1> namste react</h1>
      <h2> this is react</h2>
      </div>
      );
      };
- this is valid.
+     
+     
+this is valid.
     
 Que:-How to we render my react element?
 Ans:-
